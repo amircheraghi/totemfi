@@ -1,4 +1,4 @@
-import { ThemeProvider, createGlobalStyle } from "styled-components";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 
 export const Theme = ThemeProvider;
 
@@ -8,10 +8,12 @@ export const GlobalStyle = createGlobalStyle`
         width:100%;
         font-family: ${(props) => props.theme.mainFont};
         font-weight: normal;
-        font-size: 20px;
-        line-height: 34px;
+        font-size: 16px;
+        line-height: 0px;
         color: ${(props) => props.theme.mainFontColor};
         background: ${(props) => props.bodyBg};
+        background-image: url('/assets/background.svg');
+        background-repeat: no-repeat;
         margin: 0; padding: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -29,4 +31,8 @@ export const GlobalStyle = createGlobalStyle`
     *:focus {
         outline: none;
     }
+`;
+
+export const Wrapper = styled.div`
+    margin: 0 30px;
 `;

@@ -1,12 +1,13 @@
 import React, { Component, Fragment } from "react";
-import { Theme, GlobalStyle } from "./Styled";
+import Header from "../Components/Header";
+import { Theme, GlobalStyle, Wrapper } from "./Styled";
 
 class BaseTemplate extends Component {
     constructor(props) {
         super(props);
 
         this.theme = {
-            mainFont: '"Montserrat", sans-serif',
+            mainFont: '"Lato", sans-serif',
             mainFontColor: "#797A80",
             bodyBg: "#EAEAEA",
             cyan: "#07AED0",
@@ -17,7 +18,7 @@ class BaseTemplate extends Component {
     }
 
     renderHeader() {
-        return <p>Header</p>;
+        return <Header />;
     }
 
     renderFooter() {
@@ -28,10 +29,12 @@ class BaseTemplate extends Component {
         return (
             <Theme theme={this.theme}>
                 <Fragment>
-                    {this.showHeader && this.renderHeader()}
-                    {this.renderBody()}
-                    {this.showFooter && this.renderFooter()}
-                    <GlobalStyle bodyBg={this.bodyBg} />
+                    <Wrapper>
+                        {this.showHeader && this.renderHeader()}
+                        {this.renderBody()}
+                        {this.showFooter && this.renderFooter()}
+                        <GlobalStyle bodyBg={this.bodyBg} />
+                    </Wrapper>
                 </Fragment>
             </Theme>
         );
