@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import { Theme, GlobalStyle, Wrapper } from "./Styled";
 
@@ -22,7 +23,7 @@ class BaseTemplate extends Component {
     }
 
     renderFooter() {
-        return <p>Footer</p>;
+        return <Footer />;
     }
 
     render() {

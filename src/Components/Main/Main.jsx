@@ -4,10 +4,17 @@ import Button from "../../Modules/Button";
 //Modules
 
 //Styles
-import { Body, Navigator, Sorter, SorterValue, SorterValues, Tabs, View } from "./Styled";
+import {
+    Body,
+    Navigator,
+    Sorter,
+    SorterValue,
+    SorterValues,
+    Tabs,
+    View,
+} from "./Styled";
 
 const Main = () => {
-
     let [activeTab, setActiveTab] = useState("All");
     let [activeSorter, setActiveSorter] = useState("Maturity");
 
@@ -22,7 +29,7 @@ const Main = () => {
                         radius="8px"
                         padding="10px 20px"
                         margin="5px"
-                        onClick={() => setActiveTab('All')}
+                        onClick={() => setActiveTab("All")}
                     />
                     <Button
                         text="Upcoming"
@@ -33,7 +40,7 @@ const Main = () => {
                         radius="8px"
                         padding="10px 20px"
                         margin="5px"
-                        onClick={() => setActiveTab('Upcoming')}
+                        onClick={() => setActiveTab("Upcoming")}
                     />
                     <Button
                         text="Open"
@@ -42,7 +49,7 @@ const Main = () => {
                         radius="8px"
                         padding="10px 20px"
                         margin="5px"
-                        onClick={() => setActiveTab('Open')}
+                        onClick={() => setActiveTab("Open")}
                     />
                     <Button
                         text="In Progress"
@@ -53,18 +60,25 @@ const Main = () => {
                         radius="8px"
                         padding="10px 20px"
                         margin="5px"
-                        onClick={() => setActiveTab('In Progress')}
+                        onClick={() => setActiveTab("In Progress")}
                     />
                 </Tabs>
                 <Sorter>
-                    Sorted By 
-                    <SorterValues onChange={(event) => setActiveSorter(event.target.value)}>
+                    Sorted By
+                    <SorterValues
+                        onChange={(event) =>
+                            setActiveSorter(event.target.value)
+                        }
+                    >
                         <SorterValue>Maturity</SorterValue>
                         <SorterValue>NotFound</SorterValue>
                     </SorterValues>
                 </Sorter>
             </Navigator>
-            <View>This is result of navigator [{activeTab}] and Sorter [{activeSorter}]</View>
+            <View>
+                This is result of navigator [{activeTab}] and Sorter [
+                {activeSorter}]
+            </View>
         </Body>
     );
 };

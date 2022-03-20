@@ -8,7 +8,7 @@ export const Body = styled.div`
     align-items: flex-start;
 
     margin: 55px auto 0 auto;
-`
+`;
 
 export const Navigator = styled.div`
     width: 100%;
@@ -17,13 +17,13 @@ export const Navigator = styled.div`
     align-items: flex-start;
 
     margin: 0 0 55px 0;
-`
+`;
 
 export const Tabs = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-`
+`;
 
 export const Sorter = styled.div`
     background: #232831;
@@ -31,11 +31,11 @@ export const Sorter = styled.div`
     height: 35px;
     color: #909090;
     border-radius: 8px;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
-`
+`;
 
 export const SorterValues = styled.select`
     height: 50%;
@@ -45,8 +45,8 @@ export const SorterValues = styled.select`
 
     font-size: 15px;
     line-height: 0;
-`
+`;
 
-export const SorterValue = styled.option``
+export const SorterValue = styled.option``;
 
-export const View = styled.div``
+export const View = styled.div``;
