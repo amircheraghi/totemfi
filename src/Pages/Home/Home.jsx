@@ -1,5 +1,7 @@
 import React from "react";
+import Navigation from "../../Components/Navigation";
 import BaseTemplate from "../../Template/BaseTemplate";
+import { Wrapper } from './Styled'
 
 export default class Home extends BaseTemplate {
     constructor(props) {
@@ -11,9 +13,9 @@ export default class Home extends BaseTemplate {
 
     renderBody() {
         return (
-            <>
-                <p>Home</p>
-            </>
+            <Wrapper>
+                <Navigation />
+            </Wrapper>
         );
     }
 }
