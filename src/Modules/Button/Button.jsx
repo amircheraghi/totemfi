@@ -13,20 +13,18 @@ const Button = ({
     onClick,
 }) => {
     return (
-        <>
-            <Btn
-                background={background}
-                width={width}
-                height={height}
-                color={color}
-                margin={margin}
-                radius={radius}
-                padding={padding}
-                onClick={onClick}
-            >
-                {text}
-            </Btn>
-        </>
+        <Btn
+            background={background}
+            width={width}
+            height={height}
+            color={color}
+            margin={margin}
+            radius={radius}
+            padding={padding}
+            onClick={onClick}
+        >
+            {text}
+        </Btn>
     );
 };
 
