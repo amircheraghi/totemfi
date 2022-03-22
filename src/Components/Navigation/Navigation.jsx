@@ -3,7 +3,14 @@ import React, { useEffect, useState } from "react";
 //Modules
 
 //Styles
-import { Nav, NavButton, NavButtonImage, NavLink, NavLinkParagraph, NavLinkText } from "./Styled";
+import {
+    Nav,
+    NavButton,
+    NavButtonImage,
+    NavLink,
+    NavLinkParagraph,
+    NavLinkText,
+} from "./Styled";
 
 const Navigation = () => {
     return (

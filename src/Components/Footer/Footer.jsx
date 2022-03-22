@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Foot, SocialIcon } from "./Styled";
 
 //Modules
-import DobuleCurrencyIcons from './../../Modules/DobuleCurrencyIcons'
 
 //Styles
 

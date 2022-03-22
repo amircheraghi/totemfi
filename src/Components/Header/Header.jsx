@@ -20,9 +20,9 @@ const Header = () => {
                 text="Connect Wallet"
                 color="#fff"
                 height="100%"
-                width='174px'
-                radius='8px'
-                margin='0 5px'
+                width="174px"
+                radius="8px"
+                margin="0 5px"
                 background="linear-gradient(90deg,#ffa005,#ff7b03)"
             />
             <DropdownMenu>...</DropdownMenu>
