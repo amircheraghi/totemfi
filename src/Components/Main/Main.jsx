@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "../../Modules/Button";
+import { getPreditions } from "../../Server";
 import Prediction from "../Prediction/Prediction";
 
 //Modules
@@ -18,6 +19,13 @@ import {
 const Main = () => {
     let [activeTab, setActiveTab] = useState("All");
     let [activeSorter, setActiveSorter] = useState("Maturity");
+
+    let [predictions, setPredictions] = useState(null);
+
+    useEffect(async () => {
+        let { data } = await getPreditions();
+        setPredictions(data);
+    });
 
     return (
         <Body>
@@ -77,49 +85,23 @@ const Main = () => {
                 </Sorter>
             </Navigator>
             <View>
-                <Prediction
-                    token="BNB"
-                    tokenImages={{
-                        imgOne: "/assets/Images/Currencies/BNB.png",
-                        imgTwo: "/assets/Images/Currencies/SUP.png",
-                    }}
-                    state="Open"
-                    targetDate={1648356480}
-                    progressValues={{ value: 1000, total: 3000 }}
-                />
-
-                <Prediction
-                    token="ETH"
-                    tokenImages={{
-                        imgOne: "/assets/Images/Currencies/ETH.png",
-                        imgTwo: "/assets/Images/Currencies/SUP.png",
-                    }}
-                    state="Completed"
-                    targetDate={1648356480}
-                    progressValues={{ value: 1000, total: 3000 }}
-                />
-
-                <Prediction
-                    token="BTC"
-                    tokenImages={{
-                        imgOne: "/assets/Images/Currencies/BTC.png",
-                        imgTwo: "/assets/Images/Currencies/SUP.png",
-                    }}
-                    state="Open"
-                    targetDate={1648356480}
-                    progressValues={{ value: 1000, total: 3000 }}
-                />
-
-                <Prediction
-                    token="BNB"
-                    tokenImages={{
-                        imgOne: "/assets/Images/Currencies/BNB.png",
-                        imgTwo: "/assets/Images/Currencies/SUP.png",
-                    }}
-                    state="Open"
-                    targetDate={1648356480}
-                    progressValues={{ value: 1000, total: 3000 }}
-                />
+                {predictions ?
+                    predictions.map((item) => (
+                        <Prediction
+                            token={item.pair[0]}
+                            tokenImages={{
+                                imgOne: `/assets/Images/Currencies/${item.pair[0]}.png`,
+                                imgTwo: `/assets/Images/Currencies/${item.pair[1]}.png`,
+                            }}
+                            state={item.state}
+                            targetDate={item.targetDate}
+                            progressValues={{
+                                value: item.filledValue,
+                                total: item.totalValue,
+                            }}
+                        />
+                    )) : null
+                }
             </View>
         </Body>
     );
