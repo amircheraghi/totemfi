@@ -7,10 +7,7 @@ export const Foot = styled.div`
     align-items: center;
 
     height: 37px;
-    position: fixed;
-    bottom: 16px;
-
-    left: 0;
+    margin: 0 0 16px 0;
 `;
 
 export const SocialIcon = styled.img`

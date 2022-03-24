@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Body = styled.div`
-    width: 68%;
+    width: 65%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 
-    margin: 55px auto 0 auto;
+    margin: 55px auto;
 `;
 
 export const Navigator = styled.div`
@@ -15,8 +15,6 @@ export const Navigator = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-
-    margin: 0 0 55px 0;
 `;
 
 export const Tabs = styled.div`
@@ -49,4 +47,9 @@ export const SorterValues = styled.select`
 
 export const SorterValue = styled.option``;
 
-export const View = styled.div``;
+export const View = styled.div`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+`;

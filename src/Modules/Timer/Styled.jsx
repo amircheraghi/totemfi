@@ -2,6 +2,24 @@ import styled from "styled-components";
 
 export const Time = styled.div`
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin: 0 0 30px 0;
+`;
+
+export const Title = styled.span`
+    color: #fff;
+
+    line-height: 1.5;
+    font-size: 16px;
+
+    margin: 0 0 5px 0;
+`;
+
+export const Boxes = styled.div`
+    display: flex;
     align-items: center;
     justify-content: center;
 `;
@@ -18,13 +36,14 @@ export const TimeBox = styled.div`
     justify-content: center;
 
     padding: 0 5px;
-    margin: 0 3px;
+    margin: 0 2.6px;
 `;
 
 export const TimeValue = styled.span`
     color: #fff;
 
     font-size: 26px;
+    font-weight: bold;
     line-height: 1.1;
 `;
 

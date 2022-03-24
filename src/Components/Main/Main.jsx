@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "../../Modules/Button";
+import Prediction from "../Prediction/Prediction";
 
 //Modules
 
@@ -76,8 +77,7 @@ const Main = () => {
                 </Sorter>
             </Navigator>
             <View>
-                This is result of navigator [{activeTab}] and Sorter [
-                {activeSorter}]
+                
             </View>
         </Body>
     );
