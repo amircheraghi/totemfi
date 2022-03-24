@@ -11,7 +11,7 @@ export const Predict = styled.div`
     justify-content: flex-start;
     align-items: center;
 
-    margin: 12.5px 0;
+    margin: 12.5px 2.5px;
     padding: 22px;
 `;
 

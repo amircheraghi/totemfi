@@ -77,7 +77,49 @@ const Main = () => {
                 </Sorter>
             </Navigator>
             <View>
-                
+                <Prediction
+                    token="BNB"
+                    tokenImages={{
+                        imgOne: "/assets/Images/Currencies/BNB.png",
+                        imgTwo: "/assets/Images/Currencies/SUP.png",
+                    }}
+                    state="Open"
+                    targetDate={1648356480}
+                    progressValues={{ value: 1000, total: 3000 }}
+                />
+
+                <Prediction
+                    token="ETH"
+                    tokenImages={{
+                        imgOne: "/assets/Images/Currencies/ETH.png",
+                        imgTwo: "/assets/Images/Currencies/SUP.png",
+                    }}
+                    state="Completed"
+                    targetDate={1648356480}
+                    progressValues={{ value: 1000, total: 3000 }}
+                />
+
+                <Prediction
+                    token="BTC"
+                    tokenImages={{
+                        imgOne: "/assets/Images/Currencies/BTC.png",
+                        imgTwo: "/assets/Images/Currencies/SUP.png",
+                    }}
+                    state="Open"
+                    targetDate={1648356480}
+                    progressValues={{ value: 1000, total: 3000 }}
+                />
+
+                <Prediction
+                    token="BNB"
+                    tokenImages={{
+                        imgOne: "/assets/Images/Currencies/BNB.png",
+                        imgTwo: "/assets/Images/Currencies/SUP.png",
+                    }}
+                    state="Open"
+                    targetDate={1648356480}
+                    progressValues={{ value: 1000, total: 3000 }}
+                />
             </View>
         </Body>
     );

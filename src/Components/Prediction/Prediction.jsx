@@ -6,17 +6,22 @@ import Badge from "./../../Modules/Badge";
 import Timer from "./../../Modules/Timer";
 import ProgressBar from "./../../Modules/ProgressBar";
 import { Date, Details, Informations, Predict } from "./Styled";
+import { useTimestampToDateConverter } from './../../Hooks/useTimestampToDateConverter'
+import { useCountdownTimer } from "../../Hooks/useCountdownTimer";
 
 //Styles
 
-const Prediction = ({token, tokenImages, state, date, progressValues}) => {
+const Prediction = ({token, tokenImages, state, targetDate, progressValues}) => {
+
+    let { month, day, year, hour, timezone } = useTimestampToDateConverter(targetDate)
+    let { days, hours, minutes, seconds } = useCountdownTimer(targetDate * 1000)
 
     return (
         <Predict>
             <Informations>
                 <DobuleCurrencyIcons
                     imgOne={tokenImages.imgOne}
-                    imgTwo="/assets/Images/Currencies/SUP.png"
+                    imgTwo={tokenImages.imgTwo}
                 />
                 <Badge text={state} state={state == 'Open' ? true : false} />
             </Informations>
@@ -24,10 +29,10 @@ const Prediction = ({token, tokenImages, state, date, progressValues}) => {
                 <Date>
                     What will the price of {token} be at
                     <br />
-                    Apr, 03, 2022, 23:00 UTC
+                    {month}, {day}, {year}, {hour}
                 </Date>
-                <Timer day="02" hour="16" min="37" sec="24" />
-                <ProgressBar value={140342} total={250000} />
+                <Timer day={days > 0 ? days : '00'} hour={hours > 0 ? hours : '00'} min={minutes > 0 ? minutes : '00'} sec={seconds > 0 ? seconds : '00'} />
+                <ProgressBar value={progressValues.value} total={progressValues.total} />
             </Details>
         </Predict>
     );
