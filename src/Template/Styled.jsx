@@ -13,7 +13,8 @@ export const GlobalStyle = createGlobalStyle`
         color: ${(props) => props.theme.mainFontColor};
         background: ${(props) => props.bodyBg};
         background-image: url('/assets/background.svg');
-        background-repeat: no-repeat;
+        background-repeat: no-repeat;      
+        background-attachment: fixed;
         margin: 0; padding: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;

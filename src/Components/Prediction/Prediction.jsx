@@ -11,13 +11,13 @@ import { useCountdownTimer } from "../../Hooks/useCountdownTimer";
 
 //Styles
 
-const Prediction = ({token, tokenImages, state, targetDate, progressValues}) => {
+const Prediction = ({token, tokenImages, state, targetDate, progressValues, sty}) => {
 
     let { month, day, year, hour, timezone } = useTimestampToDateConverter(targetDate)
     let { days, hours, minutes, seconds } = useCountdownTimer(targetDate * 1000)
 
     return (
-        <Predict>
+        <Predict sty={sty}>
             <Informations>
                 <DobuleCurrencyIcons
                     imgOne={tokenImages.imgOne}

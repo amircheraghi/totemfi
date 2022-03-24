@@ -11,7 +11,7 @@ export const Predict = styled.div`
     justify-content: flex-start;
     align-items: center;
 
-    margin: 12.5px 2.5px;
+    margin: ${(props) => props.sty < 3 ? '12.5px 23px 0 0' : '12.5px 0'};
     padding: 22px;
 `;
 

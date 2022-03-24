@@ -8,6 +8,7 @@ import Prediction from "../Prediction/Prediction";
 //Styles
 import {
     Body,
+    LoadMoreBox,
     Navigator,
     Sorter,
     SorterValue,
@@ -21,11 +22,20 @@ const Main = () => {
     let [activeSorter, setActiveSorter] = useState("Maturity");
 
     let [predictions, setPredictions] = useState(null);
+    let [showNum, setShowNum] = useState(6);
 
     useEffect(async () => {
         let { data } = await getPreditions();
         setPredictions(data);
     });
+
+    let predcitionFilter = () => {
+        if (predictions) {
+            return predictions.filter((item) =>
+                activeTab == "All" ? true : item.state === activeTab
+            );
+        }
+    };
 
     return (
         <Body>
@@ -84,24 +94,47 @@ const Main = () => {
                     </SorterValues>
                 </Sorter>
             </Navigator>
-            <View>
-                {predictions ?
-                    predictions.map((item) => (
-                        <Prediction
-                            token={item.pair[0]}
-                            tokenImages={{
-                                imgOne: `/assets/Images/Currencies/${item.pair[0]}.png`,
-                                imgTwo: `/assets/Images/Currencies/${item.pair[1]}.png`,
-                            }}
-                            state={item.state}
-                            targetDate={item.targetDate}
-                            progressValues={{
-                                value: item.filledValue,
-                                total: item.totalValue,
-                            }}
+            <View sty={predictions ? predcitionFilter().length : 0}>
+                {predictions
+                    ? predcitionFilter().map((item, index) =>
+                          index < showNum ? (
+                              <Prediction
+                                  sty={
+                                      predictions
+                                          ? predcitionFilter().length
+                                          : 0
+                                  }
+                                  key={(Math.random(50) + index).toString()}
+                                  token={item.pair[0]}
+                                  tokenImages={{
+                                      imgOne: `/assets/Images/Currencies/${item.pair[0]}.png`,
+                                      imgTwo: `/assets/Images/Currencies/${item.pair[1]}.png`,
+                                  }}
+                                  state={item.state}
+                                  targetDate={item.targetDate}
+                                  progressValues={{
+                                      value: item.filledValue,
+                                      total: item.totalValue,
+                                  }}
+                              />
+                          ) : null
+                      )
+                    : null}
+                {predictions &&
+                predcitionFilter().length > 6 &&
+                showNum <= predcitionFilter().length ? (
+                    <LoadMoreBox>
+                        <Button
+                            text="Load More"
+                            background="#232831"
+                            width="400px"
+                            padding="10px 20px"
+                            radius="8px"
+                            color="#909090"
+                            onClick={() => setShowNum(showNum + 6)}
                         />
-                    )) : null
-                }
+                    </LoadMoreBox>
+                ) : null}
             </View>
         </Body>
     );

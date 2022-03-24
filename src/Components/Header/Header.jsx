@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 //Modules
 import Button from "../../Modules/Button/Button";
+import FeatherIcon from 'feather-icons-react';
 
 //Styles
 import { DropdownMenu, Head, TotmPrice } from "./Styled";
@@ -25,7 +26,7 @@ const Header = () => {
                 margin="0 5px"
                 background="linear-gradient(90deg,#ffa005,#ff7b03)"
             />
-            <DropdownMenu>...</DropdownMenu>
+            <DropdownMenu><FeatherIcon icon="more-horizontal" /></DropdownMenu>
         </Head>
     );
 };

@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const Body = styled.div`
     width: 65%;
+    min-height: 673px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
 
-    margin: 55px auto;
+    margin: 140px auto 55px auto;
 `;
 
 export const Navigator = styled.div`
@@ -51,5 +52,13 @@ export const View = styled.div`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: ${(props) => props.sty < 3 ? 'flex-start' : 'space-between'};
+`;
+
+export const LoadMoreBox = styled.div`
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 `;

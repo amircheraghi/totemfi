@@ -1,13 +1,20 @@
 import styled from "styled-components";
 
 export const Head = styled.div`
+    height: 37px;
+    width: 100%;
+    background-image: url('/assets/background.svg');
+    background-repeat: no-repeat;
+    
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
 
-    height: 37px;
+    position: fixed;
+    z-index: 1;
 
     padding: 20px 0;
+    left: 0;
 `;
 
 export const TotmPrice = styled.div`
@@ -39,5 +46,5 @@ export const DropdownMenu = styled.div`
 
     line-height: 0;
 
-    margin: 0 5px;
+    margin: 0 30px 0 5px;
 `;

@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
 export const Nav = styled.ul`
+    height: 100%;
+    
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
 
+    position: fixed;
+
     padding: 0;
-    margin: 0;
+    margin: 85px 0 0 0;
 `;
 
 export const NavButton = styled.li`
