@@ -7,10 +7,23 @@ import App from "./App";
 import "./Styles/index.css";
 import "./Styles/Fonts/Lato-Regular.ttf";
 
+//Web3
+import Web3 from "web3";
+import { Web3ReactProvider } from "@web3-react/core";
+import { MetaMaskProvider } from "./Hooks/useMetaMask";
+
+const getLibrary = (provider, connector) => {
+    return new Web3(provider);
+};
+
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <App />
+            <Web3ReactProvider getLibrary={getLibrary}>
+                <MetaMaskProvider>
+                    <App />
+                </MetaMaskProvider>
+            </Web3ReactProvider>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById("root")

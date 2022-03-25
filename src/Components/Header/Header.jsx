@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 //Modules
 import Button from "../../Modules/Button/Button";
 import FeatherIcon from 'feather-icons-react';
+import useMetaMask from '../../Hooks/useMetaMask';
 
 //Styles
 import { DropdownMenu, Head, TotmPrice } from "./Styled";
@@ -13,6 +14,8 @@ const Header = () => {
     useEffect(() => {
         // Get & Set Price Of Totm Token
     }, []);
+
+    const { connect, disconnect, isActive, account, shouldDisable } = useMetaMask()
 
     return (
         <Head>
@@ -25,6 +28,7 @@ const Header = () => {
                 radius="8px"
                 margin="0 5px"
                 background="linear-gradient(90deg,#ffa005,#ff7b03)"
+                onClick={connect}
             />
             <DropdownMenu><FeatherIcon icon="more-horizontal" /></DropdownMenu>
         </Head>
