@@ -4,10 +4,12 @@ import { getPreditions } from "../../Server";
 import Prediction from "../Prediction/Prediction";
 
 //Modules
+import Loading from "./../../Modules/Loading";
 
 //Styles
 import {
     Body,
+    NothingBox,
     LoadMoreBox,
     Navigator,
     Sorter,
@@ -95,6 +97,7 @@ const Main = () => {
                 </Sorter>
             </Navigator>
             <View sty={predictions ? predcitionFilter().length : 0}>
+                {/* Show Predictions */}
                 {predictions
                     ? predcitionFilter().map((item, index) =>
                           index < showNum ? (
@@ -120,6 +123,8 @@ const Main = () => {
                           ) : null
                       )
                     : null}
+
+                {/* Load More Button */}
                 {predictions &&
                 predcitionFilter().length > 6 &&
                 showNum <= predcitionFilter().length ? (
@@ -135,6 +140,21 @@ const Main = () => {
                         />
                     </LoadMoreBox>
                 ) : null}
+
+                {/* Loading */}
+                {predictions && predcitionFilter().length > 0 ? null : (
+                    <NothingBox>
+                        {predictions && predcitionFilter().length == 0 ? (
+                            "There is no available pool"
+                        ) : (
+                            <Loading
+                                type="cylon"
+                                color="#909090"
+                                width="60px"
+                            />
+                        )}
+                    </NothingBox>
+                )}
             </View>
         </Body>
     );

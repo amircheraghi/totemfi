@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 //Modules
+import { Link } from "react-router-dom";
 
 //Styles
 import {
@@ -15,18 +16,24 @@ import {
 const Navigation = () => {
     return (
         <Nav>
-            <NavButton>
-                <NavButtonImage src="/assets/Images/Navigation/totem.svg" />
-            </NavButton>
+            <Link to="/">
+                <NavButton>
+                    <NavButtonImage src="/assets/Images/Navigation/totem.svg" />
+                </NavButton>
+            </Link>
 
-            <NavButton>
-                <NavButtonImage src="/assets/Images/Navigation/bars.svg" />
-            </NavButton>
+            <Link to="/account">
+                <NavButton>
+                    <NavButtonImage src="/assets/Images/Navigation/bars.svg" />
+                </NavButton>
+            </Link>
 
-            <NavLink>
-                <NavLinkText>V1</NavLinkText>
-                <NavLinkParagraph>dApp</NavLinkParagraph>
-            </NavLink>
+            <Link to="/v1">
+                <NavLink>
+                    <NavLinkText>V1</NavLinkText>
+                    <NavLinkParagraph>dApp</NavLinkParagraph>
+                </NavLink>
+            </Link>
         </Nav>
     );
 };

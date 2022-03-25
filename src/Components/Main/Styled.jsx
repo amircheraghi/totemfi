@@ -62,3 +62,13 @@ export const LoadMoreBox = styled.div`
     justify-content: center;
     align-items: flex-start;
 `;
+
+export const NothingBox = styled.div`
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 120px 0;
+`;
