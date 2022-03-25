@@ -15,20 +15,20 @@ const Header = () => {
         // Get & Set Price Of Totm Token
     }, []);
 
-    const { connect, disconnect, isActive, account, shouldDisable } = useMetaMask()
+    const { connect, disconnect, isActive, account, shouldDisable, connector } = useMetaMask()
 
     return (
         <Head>
             <TotmPrice>1 TOTM: ${totmPrice}</TotmPrice>
             <Button
-                text="Connect Wallet"
+                text={isActive && account ? `${account.substring(0, 16)}...` : 'Connect Wallet'}
                 color="#fff"
                 height="100%"
                 width="174px"
                 radius="8px"
                 margin="0 5px"
                 background="linear-gradient(90deg,#ffa005,#ff7b03)"
-                onClick={connect}
+                onClick={isActive ? null : connect}
             />
             <DropdownMenu><FeatherIcon icon="more-horizontal" /></DropdownMenu>
         </Head>

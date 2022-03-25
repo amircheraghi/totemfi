@@ -92,7 +92,6 @@ const Main = () => {
                         }
                     >
                         <SorterValue>Maturity</SorterValue>
-                        <SorterValue>NotFound</SorterValue>
                     </SorterValues>
                 </Sorter>
             </Navigator>
