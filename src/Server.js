@@ -6,14 +6,14 @@ export const getPreditions = () => {
                     {
                         pair: ['BNB', 'SUP'],
                         state: 'Open',
-                        targetDate: 1648356480,
+                        targetDate: 1650356480,
                         filledValue: 119273,
                         totalValue: 255000
                     },
                     {
                         pair: ['BTC', 'SUP'],
                         state: 'Open',
-                        targetDate: 1648656480,
+                        targetDate: 1649895980,
                         filledValue: 1000,
                         totalValue: 3000
                     },
